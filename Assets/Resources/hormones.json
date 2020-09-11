@@ -1,0 +1,17 @@
+{"Items":
+    [
+        {
+            "id":0,
+            "duration":4,
+            "maxBorder": 130,
+            "minBorder":100,
+            "priority":1,
+            "chance": 10,
+            "timeInterval":{
+                "minTime": {"hour":0, "minute": 0},
+                "maxTime": {"hour":23, "minute": 59}
+            },
+            "necessaryTouchTime": 0
+        }
+    ]
+}

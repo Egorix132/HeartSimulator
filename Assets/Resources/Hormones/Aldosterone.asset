@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219b9dd5c48ec5c4badc90fd648b698c, type: 3}
+  m_Name: Aldosterone
+  m_EditorClassIdentifier: 
+  id: 2
+  duration: 5
+  minBorder: 90
+  maxBorder: 110
+  priority: 1
+  chance: 4
+  timeInterval:
+    minTime:
+      hour: 0
+      minute: 0
+    maxTime:
+      hour: 23
+      minute: 59
+  necessaryTouchTime: 0.01
+  moveTime: 2
+  disappearTime: 2
+  color: {r: 1, g: 0.5921569, b: 0, a: 1}

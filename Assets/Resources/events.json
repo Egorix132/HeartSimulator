@@ -1,0 +1,13 @@
+{"Items":
+    [
+        {
+            "name":"Nightmare",
+            "duration":4,
+            "maxBorder": 110,
+            "minBorder":80,
+            "priority":1,
+            "chance": 10,
+            "timeInterval":{"maxTime": {"hour":8, "minute": 0}, "minTime": {"hour":22, "minute": 0}}
+        }
+    ]
+}
