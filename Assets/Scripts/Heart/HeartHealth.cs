@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeartHealth : MonoBehaviour
 {
     public static HeartHealth Instance { get; private set; }
-    
-    [SerializeField] private UnityEngine.UI.Image HealthBar;
+
+    [SerializeField] private Image HealthBar;
     [SerializeField] private float maxHeartHealth;
 
     [SerializeField] private Color damageColor;
@@ -19,12 +18,12 @@ public class HeartHealth : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
-        { 
-            Instance = this; 
+        {
+            Instance = this;
         }
         else if (Instance == this)
-        { 
-            Destroy(gameObject); 
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -36,13 +35,15 @@ public class HeartHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Health -= damage;
-        if(Health > 0 && damage != 0)
+        if (Health > 0 && damage != 0)
         {
+            Health -= damage;
+
             Color color = damage > 0 ? damageColor : healColor;
             float transparency = damage * 10 / Health < 1 ? Math.Abs(damage) * 10 / Health : 1;
             screenEffects.SetEffect(color, 1);
+            Debug.LogError(Health / maxHeartHealth);
             HealthBar.fillAmount = Health / maxHeartHealth;
-        }       
+        }
     }
 }
