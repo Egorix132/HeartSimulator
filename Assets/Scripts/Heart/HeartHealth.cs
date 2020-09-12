@@ -38,12 +38,15 @@ public class HeartHealth : MonoBehaviour
         if (Health > 0 && damage != 0)
         {
             Health -= damage;
-
             Color color = damage > 0 ? damageColor : healColor;
             float transparency = damage * 10 / Health < 1 ? Math.Abs(damage) * 10 / Health : 1;
             screenEffects.SetEffect(color, 1);
-            Debug.LogError(Health / maxHeartHealth);
             HealthBar.fillAmount = Health / maxHeartHealth;
+
+            if (Health <= 0)
+            {
+                GameManager.Instance.EndGame();
+            }
         }
     }
 }

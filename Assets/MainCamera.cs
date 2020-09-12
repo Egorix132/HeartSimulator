@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class MainCamera : MonoBehaviour
         {
             Instance = gameObject;
         }
-        else if (Instance == this)
+        else
         {
             Destroy(gameObject);
         }

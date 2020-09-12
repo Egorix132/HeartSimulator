@@ -33,7 +33,7 @@ public class HeartStrength : MonoBehaviour
 
     private void CalcStrength(int newBpm, int oldBpm)
     {
-        if(Time.realtimeSinceStartup > GameManager.Instance.handicapTime)
+        if(Time.timeSinceLevelLoad > GameManager.Instance.handicapTime)
         {
             float damage = Math.Abs(newBpm - oldBpm) <= healRangeStandart && newBpm != 0 ? -healStrength : 0;
 

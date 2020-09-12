@@ -28,7 +28,7 @@ public class Heartbeat : MonoBehaviour
         { 
             Instance = this; 
         }
-        else if (Instance == this)
+        else
         { 
             Destroy(gameObject); 
         }
@@ -58,6 +58,11 @@ public class Heartbeat : MonoBehaviour
             Beat();
             HandleBeat();
         }
+    }
+
+    private void OnMouseUpAsButton()
+    {
+        GameManager.Instance.StartGame();
     }
 
     private void OnMouseDrag()
