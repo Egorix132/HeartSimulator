@@ -38,10 +38,19 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        RecordManager.Instance.CheckRecord();
         lastEndTime = Time.realtimeSinceStartup;
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameScene"))
         {
             SceneManager.LoadScene("MainMenu");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameScene"))
+        {
+            RecordManager.Instance.CheckRecord();
         }
     }
 }

@@ -47,7 +47,7 @@ class BPMBorders : MonoBehaviour
 
     private void UpdateDayTime()
     {
-        DateTime time = Timer.Instance.DateTime;
+        DateTime time = GameTime.Instance.DateTime;
         if (time.Hour > 6 && time.Hour < 22)
         {
             dayTime = day;

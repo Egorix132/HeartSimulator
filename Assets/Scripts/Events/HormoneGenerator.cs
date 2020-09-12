@@ -40,7 +40,7 @@ public class HormoneGenerator : MonoBehaviour
         yield return new WaitForSeconds(GameManager.Instance.handicapTime);
         while (true)
         {    
-            DateTime time = Timer.Instance.DateTime;
+            DateTime time = GameTime.Instance.DateTime;
             if (!HasHormone)
             {
                 HormoneData hormone = hormoneList?.Where(h => h.timeInterval.Contains(time))?.

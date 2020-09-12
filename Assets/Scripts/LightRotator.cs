@@ -13,7 +13,7 @@ public class LightRotator : MonoBehaviour
         if (isMenu)
             dateTime = DateTime.Now;
         else
-            dateTime = Timer.Instance.DateTime;
+            dateTime = GameTime.Instance.DateTime;
 
         transform.rotation = Quaternion.Euler(
             0,
