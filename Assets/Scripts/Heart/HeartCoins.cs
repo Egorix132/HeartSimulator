@@ -14,6 +14,8 @@ class HeartCoins : MonoBehaviour
 
     private void Start()
     {
+        heartCoins += PlayerPrefs.GetInt("coins", 0);
+        GameManager.OnQuit += SaveCoins;
         StartCoroutine(EvenessChecker());
     }
 
@@ -33,5 +35,11 @@ class HeartCoins : MonoBehaviour
             heartCounter.text = heartCoins.ToString();
             yield return new WaitForSeconds(updateRate);
         }
+    }
+
+    private void SaveCoins()
+    {
+        PlayerPrefs.SetInt("coins", heartCoins);
+        PlayerPrefs.Save();
     }
 }

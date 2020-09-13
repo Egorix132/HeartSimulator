@@ -1,11 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using System.Linq;
-using System.Text;
-using System;
 
 public class Heartbeat : MonoBehaviour
 {
@@ -25,12 +19,12 @@ public class Heartbeat : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
-        { 
-            Instance = this; 
+        {
+            Instance = this;
         }
         else
-        { 
-            Destroy(gameObject); 
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -73,7 +67,7 @@ public class Heartbeat : MonoBehaviour
         {
             float scale = (scalePower / necessaryTouchTime + 1) * Time.deltaTime;
             transform.localScale -= new Vector3(scale, scale, scale);
-            if(lastTouchTime > necessaryTouchTime)
+            if (lastTouchTime > necessaryTouchTime)
                 Beat();
         }
     }
@@ -82,7 +76,7 @@ public class Heartbeat : MonoBehaviour
     {
         counted = true;
         OnBeat?.Invoke();
-        if(transform.localScale.x > scalePower)
+        if (transform.localScale.x > scalePower)
             transform.localScale -= new Vector3(scalePower, scalePower, scalePower);
     }
 

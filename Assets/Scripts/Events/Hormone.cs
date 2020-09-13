@@ -2,11 +2,14 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(ParticleSystem))]
 class Hormone : MonoBehaviour
 {
     public HormoneData data;
 
     private SpriteRenderer spriteRenderer;
+    private ParticleSystem particleSystem;
     private Vector3 heart;
     private Vector3 startPoint;
 
@@ -15,7 +18,9 @@ class Hormone : MonoBehaviour
         startPoint = transform.position;
         heart = Heartbeat.Instance.transform.position - new Vector3(0, 0, 1);
         spriteRenderer = GetComponent<SpriteRenderer>();
+        particleSystem = GetComponent<ParticleSystem>();
         spriteRenderer.color = data.color;
+        particleSystem.startColor = data.color;
     }
 
     public IEnumerator Run(Action<Hormone, float> onAppear, Action<Hormone> onSet, Action<float> onDisappear, Action onRelease)
@@ -39,7 +44,10 @@ class Hormone : MonoBehaviour
         float remains = data.disappearTime;
         while (remains > 0)
         {
-            GetComponent<SpriteRenderer>().color = new Color(
+            spriteRenderer.color = new Color(
+                data.color.r, data.color.g, data.color.b,
+                ((float)Math.Sin(remains * Math.PI * 5 / data.disappearTime - Math.PI / 2) + 1.2f) / 2);
+            particleSystem.startColor = new Color(
                 data.color.r, data.color.g, data.color.b,
                 ((float)Math.Sin(remains * Math.PI * 5 / data.disappearTime - Math.PI / 2) + 1.2f) / 2);
             yield return new WaitForFixedUpdate();

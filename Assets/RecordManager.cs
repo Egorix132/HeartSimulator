@@ -19,20 +19,18 @@ public class RecordManager : MonoBehaviour
 
         recordAge = recordAge.AddYear(PlayerPrefs.GetInt("recYear", 0));
         recordAge = recordAge.AddMonth(PlayerPrefs.GetInt("recMonth", 0));
+
+        GameManager.OnEndGame += CheckRecord;
+        GameManager.OnQuit += Save;
     }
 
-    public void CheckRecord()
+    private void CheckRecord()
     {
         Age currentAge = GameTime.Instance.AgeTime;
         if (currentAge > recordAge)
         {
             recordAge = currentAge;
         }
-    }
-
-    private void OnApplicationQuit()
-    {
-        Save();
     }
 
     public void Save()

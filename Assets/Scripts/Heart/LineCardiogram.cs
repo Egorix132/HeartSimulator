@@ -32,24 +32,24 @@ public class LineCardiogram : MonoBehaviour, HeartbeatListener
     public IEnumerator Beat()
     {
         
-        line.SetPosition(0, new Vector3(0, 0.05f, 0));
+        line.SetPosition(0, new Vector3(0, 0.06f, 0));
         yield return new WaitForFixedUpdate();
         line.SetPosition(0, new Vector3(0, 0, 0));
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForFixedUpdate();
 
         line.SetPosition(0, new Vector3(0, -0.03f, 0));
         yield return new WaitForFixedUpdate();
 
-        line.SetPosition(0, new Vector3(0, 0.1f, 0));
+        line.SetPosition(0, new Vector3(0, 0.12f, 0));
         yield return new WaitForFixedUpdate();
 
-        line.SetPosition(0, new Vector3(0, -0.08f, 0));
-        yield return new WaitForSeconds(0.02f);
+        line.SetPosition(0, new Vector3(0, -0.1f, 0));
+        yield return new WaitForFixedUpdate();
 
         line.SetPosition(0, new Vector3(0, 0, 0));
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForFixedUpdate();
 
-        line.SetPosition(0, new Vector3(0, 0.03f, 0));
+        line.SetPosition(0, new Vector3(0, 0.04f, 0));
         yield return new WaitForFixedUpdate();
 
         line.SetPosition(0, new Vector3(0, 0, 0));
