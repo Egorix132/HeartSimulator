@@ -45,6 +45,7 @@ class BPM : MonoBehaviour, HeartbeatListener
         }
         updateTimer -= Time.deltaTime;
         waitingNewTimer += Time.deltaTime;
+        Bpm = (int)(uniqBeats.Count / waitingNewTimer * 60 + Bpm) / 2;
 
         if (waitingNewTimer > 5)
         {
@@ -55,10 +56,20 @@ class BPM : MonoBehaviour, HeartbeatListener
     private void CalcBPM()
     {
         updateTimer = updateRate;
-        OldBpm = Bpm;
-        Bpm = (int)(uniqBeats.Count / waitingNewTimer * 60 + Bpm) / 2 + Bpm / 30;
+        Bpm = (int)(uniqBeats.Count / waitingNewTimer * 60 + Bpm) / 2;
         BPMText.text = Bpm.ToString();
         OnBPMUpdate?.Invoke(Bpm, OldBpm);
+        OldBpm = Bpm;
+    }
+
+    public float CalcIdealTime(float idealBpm)
+    {
+        float add = uniqBeats.Count > saveBeatsCount ? uniqBeats[0] : 0;
+        float averageBpm = ((int)idealBpm) * 2 - Bpm;
+        float time 
+            = (uniqBeats.Count * 60f) / (averageBpm == 0 ? 60 : averageBpm)
+            + add - waitingNewTimer;
+        return time;
     }
 
     private void DeleteFirstBeat()

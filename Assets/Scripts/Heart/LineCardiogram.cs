@@ -20,7 +20,7 @@ public class LineCardiogram : MonoBehaviour, HeartbeatListener
     }
 
     void FixedUpdate()
-    {   
+    {
         for (int i = line.positionCount - 1; i > 0; i--)
         {
             float oldX = line.GetPosition(i).x;
@@ -31,9 +31,9 @@ public class LineCardiogram : MonoBehaviour, HeartbeatListener
 
     public IEnumerator Beat()
     {
-        
         line.SetPosition(0, new Vector3(0, 0.06f, 0));
         yield return new WaitForFixedUpdate();
+
         line.SetPosition(0, new Vector3(0, 0, 0));
         yield return new WaitForFixedUpdate();
 

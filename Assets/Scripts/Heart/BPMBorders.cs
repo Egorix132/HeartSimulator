@@ -5,13 +5,29 @@ using UnityEngine;
 
 class BPMBorders : MonoBehaviour
 {
+    public static BPMBorders Instance { get; private set; }
+
     [SerializeField] private HormoneData day;
     [SerializeField] private HormoneData night;
 
     private HormoneData dayTime;
 
+    private float additionalRange = 0;
     public float MaxBorder { get; private set; } = 0;
     public float MinBorder { get; private set; } = 0;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance == this)
+        {
+            Destroy(gameObject);
+        }
+        additionalRange = PlayerPrefs.GetInt("Save Range", 0) * 0.5f;
+    }
 
     private void Start()
     {
@@ -43,6 +59,9 @@ class BPMBorders : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         MaxBorder = hormone.maxBorder;
         MinBorder = hormone.minBorder;
+
+        MaxBorder += additionalRange;
+        MinBorder -= additionalRange;
     }
 
     private void UpdateDayTime()

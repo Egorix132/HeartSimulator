@@ -1,0 +1,718 @@
+fileFormatVersion: 2
+guid: 6964f60a4600d3045b110df36eb89e6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3157622056613274376
+    second: health-up-0
+  - first:
+      213: 9075029482679930026
+    second: health-up-1
+  - first:
+      213: 8011559698182937585
+    second: health-up-2
+  - first:
+      213: -2909436084071651086
+    second: health-up-4
+  - first:
+      213: -3858375292905072037
+    second: health-up-3
+  - first:
+      213: -2472952244328176752
+    second: range-up-0
+  - first:
+      213: 3457258402636626316
+    second: range-up-1
+  - first:
+      213: -8442619276984244534
+    second: range-up-2
+  - first:
+      213: 2776325758085532738
+    second: range-up-3
+  - first:
+      213: -5939473079850127262
+    second: range-up-4
+  - first:
+      213: -3738693447516617421
+    second: gold-up-0
+  - first:
+      213: 8539429999678952746
+    second: gold-up-1
+  - first:
+      213: 771247269038946789
+    second: gold-up-2
+  - first:
+      213: 4576865859114814056
+    second: gold-multiplier-up-0
+  - first:
+      213: 8495916252216779245
+    second: gold-multiplier-up-1
+  - first:
+      213: -634930318382690042
+    second: gold-multiplier-up-2
+  - first:
+      213: 2149706949552333972
+    second: gold-multiplier-up-3
+  - first:
+      213: -2096070878806661044
+    second: gold-multiplier-up-4
+  - first:
+      213: -7092107842283604030
+    second: helper-up-0
+  - first:
+      213: -5171740787752175138
+    second: helper-up-1
+  - first:
+      213: -8707492457661984747
+    second: helper-up-2
+  - first:
+      213: -6091880034309796065
+    second: helper-up-3
+  - first:
+      213: -6711171527533523232
+    second: time-up-0
+  - first:
+      213: -9086559320976463362
+    second: time-up-1
+  - first:
+      213: 133493607687351273
+    second: time-up-2
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: health-up-0
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 223
+        width: 55
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc90a4287fdd24d0800000000000000
+      internalID: -3157622056613274376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-up-1
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 175
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac8551ab3bf0fd70800000000000000
+      internalID: 9075029482679930026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-up-2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 93
+        width: 25
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb97033917ce2f60800000000000000
+      internalID: 8011559698182937585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-up-4
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 44
+        width: 72
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8a430eb4b9f97d0800000000000000
+      internalID: -2909436084071651086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-up-3
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 107
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5adf381d1c447ac0800000000000000
+      internalID: -3858375292905072037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: range-up-0
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 221
+        width: 57
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093605a390f4eadd0800000000000000
+      internalID: -2472952244328176752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: range-up-1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 165
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89f3e92336aaff20800000000000000
+      internalID: 3457258402636626316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: range-up-2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 169
+        width: 88
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac62d7d9f7ac5da80800000000000000
+      internalID: -8442619276984244534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: range-up-3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 255
+        width: 115
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c847f319d778620800000000000000
+      internalID: 2776325758085532738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: range-up-4
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 320
+        width: 112
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260b98ad3b0c29da0800000000000000
+      internalID: -5939473079850127262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-up-0
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 226
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33501b03e1e7d1cc0800000000000000
+      internalID: -3738693447516617421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-up-1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 167
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a259d234756228670800000000000000
+      internalID: 8539429999678952746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-up-2
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 110
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e97e011e4504ba00800000000000000
+      internalID: 771247269038946789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-multiplier-up-0
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 213
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ac625ef3b448f30800000000000000
+      internalID: 4576865859114814056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-multiplier-up-1
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 119
+        width: 42
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de169de61de87e570800000000000000
+      internalID: 8495916252216779245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-multiplier-up-2
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 206
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6019cab4d364037f0800000000000000
+      internalID: -634930318382690042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-multiplier-up-3
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 254
+        width: 69
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494614bb41b45dd10800000000000000
+      internalID: 2149706949552333972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-multiplier-up-4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 216
+        width: 52
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4820b424a249e2e0800000000000000
+      internalID: -2096070878806661044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helper-up-0
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 295
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c77ce73e75c39d90800000000000000
+      internalID: -7092107842283604030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helper-up-1
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 345
+        width: 50
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9f1a397294a38b0800000000000000
+      internalID: -5171740787752175138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helper-up-2
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 381
+        width: 49
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5101aa87eb5c82780800000000000000
+      internalID: -8707492457661984747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helper-up-3
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 383
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f8bac826b457ba0800000000000000
+      internalID: -6091880034309796065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: time-up-0
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 296
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee06a29d012dd2a0800000000000000
+      internalID: -6711171527533523232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: time-up-1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 295
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef9eea2b07e06e180800000000000000
+      internalID: -9086559320976463362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: time-up-2
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 332
+        width: 96
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb6df99ab34ad100800000000000000
+      internalID: 133493607687351273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -57,9 +57,4 @@ public class HormoneGenerator : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
-
-    private void OnDisable()
-    {
-        HormoneSpawner.OnRelease -= onReleaseHormone;
-    }
 }

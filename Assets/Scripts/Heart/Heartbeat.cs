@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Heartbeat : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class Heartbeat : MonoBehaviour
     [SerializeField] private float standartNecessaryTouchTime;
     [SerializeField] private float force = 10f;
     [SerializeField] private float forceOffset = 0.1f;
+    [SerializeField] private AudioClip sound;
     private float necessaryTouchTime;
 
     private float lastTouchTime;
@@ -45,6 +48,11 @@ public class Heartbeat : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (PauseManager.Instance != null && PauseManager.Instance.IsPause)
+        {
+            return;
+        }
+
         lastTouchTime = 0;
         counted = false;
         if (necessaryTouchTime < 0.07)
@@ -54,13 +62,18 @@ public class Heartbeat : MonoBehaviour
         }
     }
 
-    private void OnMouseUpAsButton()
-    {
-        GameManager.Instance.StartGame();
-    }
-
     private void OnMouseDrag()
     {
+        if (PauseManager.Instance != null && PauseManager.Instance.IsPause)
+        {
+            return;
+        }
+
+        if(StartButton.Instance != null)
+        {
+            StartButton.Instance.Drag();
+        }
+
         HandleBeat();
         lastTouchTime += Time.deltaTime;
         if (!counted)
@@ -75,6 +88,7 @@ public class Heartbeat : MonoBehaviour
     private void Beat()
     {
         counted = true;
+        SoundManager.Instance.PlaySound(sound);
         OnBeat?.Invoke();
         if (transform.localScale.x > scalePower)
             transform.localScale -= new Vector3(scalePower, scalePower, scalePower);
@@ -110,5 +124,10 @@ public class Heartbeat : MonoBehaviour
                 deformer.AddDeformingForce(point, force);
             }
         }
+    }
+
+    private void OnMouseUpAsButton()
+    {
+        GameManager.Instance.StartGame();
     }
 }

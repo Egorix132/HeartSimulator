@@ -25,6 +25,8 @@ public class HeartHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        maxHeartHealth += PlayerPrefs.GetInt("Heart Health", 0) * 100;
     }
 
     void Start()

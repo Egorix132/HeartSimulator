@@ -13,6 +13,8 @@ public class GameTime : MonoBehaviour
 
     public Age AgeTime { get; private set; } = new Age(0, 0);
 
+    private float TimeMultiplier = 1;
+
     public DateTime GetDateTime()
     {
         return DateTime;
@@ -28,12 +30,13 @@ public class GameTime : MonoBehaviour
         { // Экземпляр объекта уже существует на сцене
             Destroy(gameObject); // Удаляем объект
         }
+        TimeMultiplier += PlayerPrefs.GetInt("Timer", 0) * 0.3f;
         StartCoroutine(RunTime());
     }
 
     private void Update()
     {
-        DateTime = DateTime.AddHours(Time.deltaTime);
+        DateTime = DateTime.AddHours(Time.deltaTime * TimeMultiplier);
     }
 
     private IEnumerator RunTime()

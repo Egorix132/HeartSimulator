@@ -54,5 +54,6 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         OnQuit();
+        PlayerPrefs.Save();
     }
 }

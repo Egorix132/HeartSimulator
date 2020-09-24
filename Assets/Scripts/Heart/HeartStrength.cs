@@ -9,10 +9,10 @@ public class HeartStrength : MonoBehaviour
 
     [SerializeField] private BPMBorders bpmBorders;
 
-    [SerializeField] private int normalRangeStandart;
-    [SerializeField] private int wearStrength;
-    [SerializeField] private int healRangeStandart;
-    [SerializeField] private int healStrength;
+    [SerializeField] private int normalRangeStandart = 0;
+    [SerializeField] private int wearStrength = 0;
+    [SerializeField] private int healRangeStandart = 0;
+    [SerializeField] private int healStrength = 0;
 
     private void Awake()
     {
@@ -36,7 +36,6 @@ public class HeartStrength : MonoBehaviour
         if(Time.timeSinceLevelLoad > GameManager.Instance.handicapTime)
         {
             float damage = Math.Abs(newBpm - oldBpm) <= healRangeStandart && newBpm != 0 ? -healStrength : 0;
-
             damage += Math.Abs(newBpm - oldBpm) > normalRangeStandart ? wearStrength : 0;
             damage += newBpm < bpmBorders.MinBorder ? (bpmBorders.MinBorder - newBpm) : 0;
             damage += newBpm > bpmBorders.MaxBorder ? (newBpm - bpmBorders.MaxBorder) : 0;
