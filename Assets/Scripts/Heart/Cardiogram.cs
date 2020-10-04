@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cardiogram : MonoBehaviour, HeartbeatListener
+public class Cardiogram : MonoBehaviour, IHeartbeatListener
 {
     float startY;
 

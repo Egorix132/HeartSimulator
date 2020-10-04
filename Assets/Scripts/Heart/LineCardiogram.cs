@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class LineCardiogram : MonoBehaviour, HeartbeatListener
+public class LineCardiogram : MonoBehaviour, IHeartbeatListener
 {
     private LineRenderer line;
 

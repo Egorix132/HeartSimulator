@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Resources;
 using UnityEngine;
 
-class HormoneSpawner : MonoBehaviour 
+class HormoneSpawner : MonoBehaviour
 {
 
     public static HormoneSpawner Instance { get; private set; }
@@ -28,6 +26,7 @@ class HormoneSpawner : MonoBehaviour
         else if (Instance == this)
         {
             Destroy(gameObject);
+            return;
         }
         random = new System.Random();
     }

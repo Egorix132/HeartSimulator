@@ -22,7 +22,8 @@ public class HeartStrength : MonoBehaviour
         }
         else if (Instance == this)
         { 
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            return;
         }
     }
 

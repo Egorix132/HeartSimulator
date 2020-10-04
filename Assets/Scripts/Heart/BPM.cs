@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-class BPM : MonoBehaviour, HeartbeatListener
+class BPM : MonoBehaviour, IHeartbeatListener
 {
     public static BPM Instance { get; private set; }
 
@@ -29,6 +29,7 @@ class BPM : MonoBehaviour, HeartbeatListener
         else if (Instance == this)
         { 
             Destroy(gameObject);
+            return;
         }
     }
 

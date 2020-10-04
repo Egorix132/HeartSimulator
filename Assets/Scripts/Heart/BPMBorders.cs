@@ -25,6 +25,7 @@ class BPMBorders : MonoBehaviour
         else if (Instance == this)
         {
             Destroy(gameObject);
+            return;
         }
         additionalRange = PlayerPrefs.GetInt("Save Range", 0) * 0.5f;
     }

@@ -17,6 +17,7 @@ public class EventSpawner : MonoBehaviour
         else if (Instance == this)
         {
             Destroy(gameObject);
+            return;
         }
         random = new System.Random();
     }

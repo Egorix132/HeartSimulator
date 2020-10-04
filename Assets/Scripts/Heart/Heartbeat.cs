@@ -28,6 +28,7 @@ public class Heartbeat : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
 

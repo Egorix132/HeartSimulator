@@ -1,0 +1,13 @@
+{
+  "FirstBeat": "Hey! It was your first beat! In this game, the main goal is to live as long as possible. When you tap on the heart without keeping the rhythm, it is damaged, and when the health bar decreases to zero, the game will end. Try to tap in rhythm and then health will recover a little.",
+  "Hormones": [
+    "It is hormone Adrenalin, TAP FASTER!",
+    "It is hormone Norepinephrine, tap and hold for a while.",
+    "It is hormone Aldosterone, tap a little faster.",
+    "It is hormone Acetylcholine, slow down.",
+    "It is hormone Oxytocin, slow down a little."
+  ],
+  "Events": [
+    "It is event Helper"
+  ]
+}

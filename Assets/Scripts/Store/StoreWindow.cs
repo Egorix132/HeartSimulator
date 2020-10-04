@@ -15,6 +15,7 @@ public class StoreWindow : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
 

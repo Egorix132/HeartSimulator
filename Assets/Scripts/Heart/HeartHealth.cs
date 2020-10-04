@@ -24,6 +24,7 @@ public class HeartHealth : MonoBehaviour
         else if (Instance == this)
         {
             Destroy(gameObject);
+            return;
         }
 
         maxHeartHealth += PlayerPrefs.GetInt("Heart Health", 0) * 100;
@@ -41,14 +42,24 @@ public class HeartHealth : MonoBehaviour
         {
             Health -= damage;
             Color color = damage > 0 ? damageColor : healColor;
-            float transparency = damage * 10 / Health < 1 ? Math.Abs(damage) * 10 / Health : 1;
             screenEffects.SetEffect(color, 1);
             HealthBar.fillAmount = Health / maxHeartHealth;
 
             if (Health <= 0)
             {
-                GameManager.Instance.EndGame();
+                GameManager.Instance.LastChance();
             }
         }
+    }
+
+    public void SetLastChance()
+    {
+        Health = maxHeartHealth / 5;
+        HealthBar.fillAmount = Health / maxHeartHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHeartHealth;
     }
 }
