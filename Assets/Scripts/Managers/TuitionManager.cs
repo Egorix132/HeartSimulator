@@ -19,17 +19,18 @@ public class TuitionManager : MonoBehaviour
             return;
         }
 
-        if(PlayerPrefs.GetInt("Tuition_FirstBeat", 1) == 1)
+        if (PlayerPrefs.GetInt("Tuition_FirstBeat", 1) == 1)
         {
             Heartbeat.OnBeat += OnFirstBeat;
         }
 
         string stringHormones = PlayerPrefs.GetString("Tuition_Hormones", "{}");
-        displayedHormones = JsonUtility.FromJson<List<int>>(stringHormones);
+        displayedHormones = JsonHelper.FromJson<int>(stringHormones).ToList();
 
-        if(displayedHormones.Count < texts.Hormones.Count())
+        if (displayedHormones.Count < texts.Hormones.Count())
         {
-            GameManager.OnPause += OnQuit;
+            GameManager.OnEndGame += SaveTuition;
+            GameManager.OnPause += SaveTuition;
             HormoneSpawner.OnSet += OnHormoneSetted;
         }
     }
@@ -49,20 +50,21 @@ public class TuitionManager : MonoBehaviour
             PauseManager.Instance.ShowModal(new Vector3(0, 0, 0), texts.Hormones[hormone.data.id]);
         }
 
-        if(displayedHormones.Count >= texts.Hormones.Count())
+        if (displayedHormones.Count >= texts.Hormones.Count())
         {
             PlayerPrefs.SetString(
                 "Tuition_Hormones",
                 JsonUtility.ToJson(displayedHormones));
-            
+
             HormoneSpawner.OnSet -= OnHormoneSetted;
         }
     }
 
-    private void OnQuit()
+    private void SaveTuition()
     {
+        var displayedHormonesJson = JsonHelper.ToJson(displayedHormones.ToArray());
         PlayerPrefs.SetString(
                 "Tuition_Hormones",
-                JsonUtility.ToJson(displayedHormones));
+                displayedHormonesJson);
     }
 }

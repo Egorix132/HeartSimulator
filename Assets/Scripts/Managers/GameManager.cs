@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        OnPause?.Invoke();
         OnQuit?.Invoke();
         PlayerPrefs.Save();
     }

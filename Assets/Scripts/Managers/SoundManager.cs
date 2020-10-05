@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -8,6 +10,8 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioSource mainSource;
     [SerializeField] private int mainMelodyTemp;
+
+    private readonly List<AudioSource> audioSources = new List<AudioSource>();
 
     private void Awake()
     {
@@ -38,8 +42,11 @@ public class SoundManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             int bpm = BPM.Instance.Bpm;
-            float pitch = (float)bpm / mainMelodyTemp;
-            mainSource.pitch = pitch;
+            float pitch = (float)Math.Sqrt((float)bpm / mainMelodyTemp);
+            if(Math.Abs(mainSource.pitch - pitch) > 0.1f)
+            {
+                mainSource.pitch = pitch;
+            }
         }
     }
 
@@ -51,8 +58,14 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(AudioClip sound)
     {
-        GameObject soundObject = new GameObject("sound");
-        AudioSource audioSource = soundObject.AddComponent<AudioSource>();
+        AudioSource audioSource = audioSources.Find(s => !s.isPlaying);
+        if (audioSource == null)
+        {
+            GameObject soundObject = new GameObject("audioSource");
+            audioSource = soundObject.AddComponent<AudioSource>();
+            audioSources.Add(audioSource);
+        }
+
         audioSource.PlayOneShot(sound);
     }
 }

@@ -19,6 +19,20 @@ class AdManager : MonoBehaviour
         }
 
         MaxSdkCallbacks.OnSdkInitializedEvent += (SdkConfiguration sdkConfiguration) => {
+            if (sdkConfiguration.ConsentDialogState == MaxSdkBase.ConsentDialogState.Applies)
+            {
+                MaxSdk.SetHasUserConsent(false);
+            }
+            else if (sdkConfiguration.ConsentDialogState == MaxSdkBase.ConsentDialogState.DoesNotApply)
+            {
+                // No need to show consent dialog, proceed with initialization
+            }
+            else
+            {
+                // Consent dialog state is unknown. Proceed with initialization, but check if the consent
+                // dialog should be shown on the next application initialization
+            }
+
             // AppLovin SDK is initialized, configure and start loading ads.
             MaxSdk.ShowMediationDebugger();
         };
