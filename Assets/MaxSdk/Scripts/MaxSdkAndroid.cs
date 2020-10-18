@@ -578,6 +578,15 @@ public class MaxSdkAndroid : MaxSdkBase
     }
 
     /// <summary>
+    /// If enabled, a button will appear over fullscreen ads in development builds. This button will display information about the current ad when pressed.
+    /// </summary>
+    /// <param name="enabled"><c>true</c> if the ad info button should be enabled.</param>
+    public static void SetAdInfoButtonEnabled(bool enabled)
+    {
+        MaxUnityPluginClass.CallStatic("setAdInfoButtonEnabled", enabled);
+    }
+
+    /// <summary>
     /// Enable devices to receive test ads, by passing in the advertising identifier (IDFA/GAID) of each test device.
     /// Refer to AppLovin logs for the IDFA/GAID of your current device.
     /// </summary>

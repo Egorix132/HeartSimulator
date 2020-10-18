@@ -58,6 +58,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(AudioClip sound)
     {
+        audioSources.RemoveAll(s => s == null);
         AudioSource audioSource = audioSources.Find(s => !s.isPlaying);
         if (audioSource == null)
         {

@@ -1,5 +1,13 @@
 ## Versions
 
+## 3.1.8
+     * Add native vertical banner support.
+     * Update behavior change for method calls to `MaxSdk` before the initialization completes.
+## 3.1.7
+    * Add `MaxSdk.SetAdInfoButtonEnabled()` API to enable the ad info button.
+    * Fix an issue where `MaxSdkUtils.ParseColor()` improperly casts `(int)`.
+## 3.1.6
+    * Fix banner always being positioned on the top left on Android.
 ## 3.1.5
     * Fix an issue where Android ad loads are failing with `NoSuchMethodError`.
 ## 3.1.4

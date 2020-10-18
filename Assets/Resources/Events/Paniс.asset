@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6532b9f0e79f748b925fdc1e38b980, type: 3}
+  m_Name: "Pani\u0441"
+  m_EditorClassIdentifier: 
+  id: 1
+  duration: 7
+  disappearTime: 5
+  chance: 7
+  timeInterval:
+    minTime:
+      hour: 0
+      minute: 0
+    maxTime:
+      hour: 23
+      minute: 59
+  spawnRadius: 0.5
+  sprite: {fileID: 21300000, guid: 8ec3d7df0bce1e44baffac8ae8436a0f, type: 3}
+  panicRate: 1

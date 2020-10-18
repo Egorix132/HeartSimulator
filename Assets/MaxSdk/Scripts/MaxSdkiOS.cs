@@ -704,6 +704,18 @@ public class MaxSdkiOS : MaxSdkBase
     }
 
     [DllImport("__Internal")]
+    private static extern bool _MaxSetAdInfoButtonEnabled(bool enabled);
+
+    /// <summary>
+    /// If enabled, a button will appear over fullscreen ads in development builds. This button will display information about the current ad when pressed.
+    /// </summary>
+    /// <param name="enabled"><c>true</c> if the ad info button should be enabled.</param>
+    public static void SetAdInfoButtonEnabled(bool enabled)
+    {
+        _MaxSetAdInfoButtonEnabled(enabled);
+    }
+
+    [DllImport("__Internal")]
     private static extern void _MaxSetTestDeviceAdvertisingIdentifiers(string[] advertisingIdentifiers, int size);
 
     /// <summary>

@@ -28,6 +28,7 @@ extern "C"
     static NSString *_userIdentifierToSet;
     static NSArray<NSString *> *_testDeviceIdentifiersToSet;
     static NSNumber *_verboseLoggingToSet;
+    static NSNumber *_adInfoButtonEnabledToSet;
     
     // Helper method to create C string copy
     static const char * cStringCopy(NSString *string);
@@ -86,6 +87,12 @@ extern "C"
         {
             _sdk.settings.isVerboseLogging = _verboseLoggingToSet.boolValue;
             _verboseLoggingToSet = nil;
+        }
+
+        if ( _adInfoButtonEnabledToSet )
+        {
+            _sdk.settings.adInfoButtonEnabled = _adInfoButtonEnabledToSet.boolValue;
+            _adInfoButtonEnabledToSet = nil;
         }
     }
     
@@ -395,6 +402,19 @@ extern "C"
         else
         {
             _verboseLoggingToSet = [NSNumber numberWithBool: enabled];
+        }
+    }
+
+    void _MaxSetAdInfoButtonEnabled(bool enabled)
+    {
+        if ( _sdk )
+        {
+            _sdk.settings.adInfoButtonEnabled = enabled;
+            _adInfoButtonEnabledToSet = nil;
+        }
+        else
+        {
+            _adInfoButtonEnabledToSet = [NSNumber numberWithBool: enabled];
         }
     }
     

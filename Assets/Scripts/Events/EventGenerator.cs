@@ -9,6 +9,7 @@ public class EventGenerator : MonoBehaviour
     private List<GameEventData> eventList;
 
     System.Random random;
+    private float callDawn = 0;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class EventGenerator : MonoBehaviour
         yield return new WaitForSeconds(GameManager.Instance.handicapTime);
         while (true)
         {
+            callDawn--;
             DateTime time = GameTime.Instance.DateTime;
 
             GameEventData gameEvent
@@ -30,8 +32,9 @@ public class EventGenerator : MonoBehaviour
                     return h.chance > random.Next(0, 100);
                 });
 
-            if (gameEvent != null)
+            if (gameEvent != null && callDawn <= 0)
             {
+                callDawn = gameEvent.duration;
                 EventSpawner.Instance.SpawnEvent(gameEvent);
             }
 

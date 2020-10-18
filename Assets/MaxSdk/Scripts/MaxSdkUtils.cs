@@ -78,10 +78,10 @@ public class MaxSdkUtils
     /// </summary>
     public static String ParseColor(Color color)
     {
-        int a = (int) Mathf.Clamp01(color.a) * Byte.MaxValue;
-        int r = (int) Mathf.Clamp01(color.r) * Byte.MaxValue;
-        int g = (int) Mathf.Clamp01(color.g) * Byte.MaxValue;
-        int b = (int) Mathf.Clamp01(color.b) * Byte.MaxValue;
+        int a = (int) (Mathf.Clamp01(color.a) * Byte.MaxValue);
+        int r = (int) (Mathf.Clamp01(color.r) * Byte.MaxValue);
+        int g = (int) (Mathf.Clamp01(color.g) * Byte.MaxValue);
+        int b = (int) (Mathf.Clamp01(color.b) * Byte.MaxValue);
 
         return BitConverter.ToString(new[]
         {

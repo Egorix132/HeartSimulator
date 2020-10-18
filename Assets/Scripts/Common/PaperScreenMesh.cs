@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class PaperScreen : MonoBehaviour
+public class PaperScreenMesh : MonoBehaviour
 {
     [SerializeField] private new Camera camera;
 
@@ -19,10 +19,10 @@ public class PaperScreen : MonoBehaviour
 
     private void Awake()
     {
-        Generate();
+        GenerateMesh();
     }
 
-    private void Generate()
+    private void GenerateMesh()
     {
         vertices = new Vector3[(1 + height * density) * (1 + width * density)];
         uv = new Vector2[vertices.Length];
@@ -41,6 +41,7 @@ public class PaperScreen : MonoBehaviour
             triangles = triangles
         };
         mesh.RecalculateNormals();
+
         GetComponent<MeshFilter>().mesh = mesh;
         GetComponent<MeshCollider>().sharedMesh = mesh;
     }
