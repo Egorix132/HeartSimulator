@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private int mainMelodyTemp;
 
     private readonly List<AudioSource> audioSources = new List<AudioSource>();
+
+    private float volume;
 
     private void Awake()
     {
@@ -66,7 +69,13 @@ public class SoundManager : MonoBehaviour
             audioSource = soundObject.AddComponent<AudioSource>();
             audioSources.Add(audioSource);
         }
-
+        audioSource.volume = volume;
         audioSource.PlayOneShot(sound);
+    }
+
+    public void ChangeVolume(float newVolume)
+    {
+        volume = newVolume;
+        mainSource.volume = volume;
     }
 }

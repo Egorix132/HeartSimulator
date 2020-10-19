@@ -32,14 +32,7 @@ public class Authentification : MonoBehaviour
 
         Social.Active.localUser.Authenticate(success =>
         {
-            if (success)
-            {
-                Debug.Log("Success auth");
-            }
-            else
-            {
-                Debug.Log(success);
-            }
+            
         });
     }
 }

@@ -2565,7 +2565,6 @@ GameObject:
   - component: {fileID: 697167605}
   - component: {fileID: 697167606}
   - component: {fileID: 697167607}
-  - component: {fileID: 697167608}
   m_Layer: 0
   m_Name: PaperScreen
   m_TagString: Untagged
@@ -2693,19 +2692,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   springForce: 20
   damping: 5
---- !u!114 &697167608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697167600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f714007116dd646b9bb39bccc66164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderCamera: {fileID: 1355297322}
 --- !u!1 &714809430
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,7 +4466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa9191ac1e3f5d4bb76a7d4e9f41c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSource: {fileID: 0}
+  mainSource: {fileID: 1094346812}
   mainMelodyTemp: 75
 --- !u!82 &1094346812
 AudioSource:
@@ -5527,6 +5513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355297323}
   - component: {fileID: 1355297322}
+  - component: {fileID: 1355297321}
   m_Layer: 0
   m_Name: RenderCamera
   m_TagString: Untagged
@@ -5534,6 +5521,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1355297321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355297320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f714007116dd646b9bb39bccc66164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1355297322
 Camera:
   m_ObjectHideFlags: 0
@@ -5725,6 +5724,7 @@ GameObject:
   - component: {fileID: 1410368402}
   - component: {fileID: 1410368406}
   - component: {fileID: 1410368407}
+  - component: {fileID: 1410368408}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5846,6 +5846,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 949949205}
+--- !u!114 &1410368408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410368401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bce003e853feaa4da6ae37e49b4465c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 1974248879}
 --- !u!1 &1429611873
 GameObject:
   m_ObjectHideFlags: 0
@@ -6917,7 +6930,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410368408}
+        m_TargetAssemblyTypeName: SoundSettingsManager, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1975362800
 GameObject:
   m_ObjectHideFlags: 0

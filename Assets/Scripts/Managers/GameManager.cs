@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public static event Action OnPause;
     public static event Action OnQuit;
     public static event Action OnStartGame;
+    public static event Action OnFailGame;
     public static event Action OnEndGame;
+
 
     [SerializeField] private Transform StartButton;
 
@@ -49,6 +51,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void EndGame()
+    {
+        OnFailGame?.Invoke();
+        QuitGame();
+    }
+
+    public void QuitGame()
     {
         OnEndGame?.Invoke();
         lastEndTime = Time.realtimeSinceStartup;

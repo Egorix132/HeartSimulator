@@ -52,4 +52,10 @@ public class PauseManager : MonoBehaviour
         modal.gameObject.SetActive(false);
         modal.GetComponent<BoxCollider2D>().enabled = false;
     }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1;
+        GameManager.Instance.QuitGame();
+    }
 }

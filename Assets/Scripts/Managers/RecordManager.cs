@@ -21,7 +21,7 @@ public class RecordManager : MonoBehaviour
         recordAge = recordAge.AddYear(PlayerPrefs.GetInt("recYear", 0));
         recordAge = recordAge.AddMonth(PlayerPrefs.GetInt("recMonth", 0));
 
-        GameManager.OnEndGame += CheckRecord;
+        GameManager.OnFailGame += CheckRecord;
         GameManager.OnPause += Save;
     }
 

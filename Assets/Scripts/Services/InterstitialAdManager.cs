@@ -38,7 +38,7 @@ class InterstitialAdManager : MonoBehaviour
             InitializeInterstitialAds();
         };
 
-        GameManager.OnEndGame += ShowAdAfterGame;
+        GameManager.OnFailGame += ShowAdAfterGame;
     }
 
     private void ShowAdAfterGame()

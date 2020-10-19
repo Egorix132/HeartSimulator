@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class PaperScreenMesh : MonoBehaviour
 {
+    public static PaperScreenMesh Instance { get; private set; }
+
     [SerializeField] private new Camera camera;
 
     [SerializeField] private int height;
@@ -19,6 +21,16 @@ public class PaperScreenMesh : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         GenerateMesh();
     }
 

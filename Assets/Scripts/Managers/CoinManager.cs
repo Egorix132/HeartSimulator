@@ -20,7 +20,7 @@ public class CoinManager : MonoBehaviour
 
         Coins += PlayerPrefs.GetInt("coins", 0);
 
-        GameManager.OnEndGame += SaveCoins;
+        GameManager.OnFailGame += SaveCoins;
         GameManager.OnPause += SaveCoins;
     }
 
