@@ -50,14 +50,14 @@ class LastChanceAd : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.EndGame();
+            GameManager.Instance.FailGame();
         }
     }
 
     public void Refuse()
     {
         PauseManager.Instance.CloseModal();
-        GameManager.Instance.EndGame();
+        GameManager.Instance.FailGame();
     }
 }
 

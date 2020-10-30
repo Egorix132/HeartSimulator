@@ -24,7 +24,11 @@
 
 public static class GPGSIds
 {
+        public const string achievement_full_health = "CgkI0YmK3ZYSEAIQBQ"; // <GPGSID>
         public const string leaderboard_perennial = "CgkI0YmK3ZYSEAIQAQ"; // <GPGSID>
+        public const string achievement_this_is_just_the_beginning = "CgkI0YmK3ZYSEAIQAw"; // <GPGSID>
+        public const string achievement_may_be_enougth = "CgkI0YmK3ZYSEAIQBA"; // <GPGSID>
+        public const string achievement_first_beat = "CgkI0YmK3ZYSEAIQAg"; // <GPGSID>
 
 }
 

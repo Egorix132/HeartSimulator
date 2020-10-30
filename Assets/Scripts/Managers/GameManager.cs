@@ -50,13 +50,13 @@ public class GameManager : MonoBehaviour
         LastChanceAd.Instance.OfferLastChance();
     }
 
-    public void EndGame()
+    public void FailGame()
     {
         OnFailGame?.Invoke();
-        QuitGame();
+        EndGame();
     }
 
-    public void QuitGame()
+    public void EndGame()
     {
         OnEndGame?.Invoke();
         lastEndTime = Time.realtimeSinceStartup;

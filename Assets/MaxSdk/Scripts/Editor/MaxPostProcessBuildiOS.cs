@@ -35,6 +35,7 @@ namespace AppLovinMax
             "Fyber",
             "Google",
             "GoogleAdManager",
+            "HyprMX",
             "InMobi",
             "IronSource",
             "Smaato"
@@ -145,7 +146,7 @@ namespace AppLovinMax
             if (Directory.Exists(maxMediationDirectory))
             {
                 var mediationNetworkDirectories = Directory.GetDirectories(maxMediationDirectory);
-                var installedNetworks = mediationNetworkDirectories.Select(Path.GetFileName).ToList();
+                var installedNetworks = mediationNetworkDirectories.Select(Path.GetFileName).ToArray();
                 var adNetworks = string.Join(",", installedNetworks);
                 if (!string.IsNullOrEmpty(adNetworks))
                 {

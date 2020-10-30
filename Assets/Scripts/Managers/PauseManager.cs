@@ -56,6 +56,6 @@ public class PauseManager : MonoBehaviour
     public void QuitGame()
     {
         Time.timeScale = 1;
-        GameManager.Instance.QuitGame();
+        GameManager.Instance.EndGame();
     }
 }

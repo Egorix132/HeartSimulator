@@ -9,6 +9,7 @@ public class Panic : MonoBehaviour
     private Vector3 startPos;
 
     private bool isActive;
+    private Coroutine coroutine;
 
     private void Awake()
     {
@@ -24,11 +25,12 @@ public class Panic : MonoBehaviour
 
         rand = new System.Random();
         startPos = transform.position;
+        GameManager.OnFailGame += StopPanic;
     }
 
     public void Activate(float duration, float rate)
     {
-        StartCoroutine(RunPanic(duration, rate));
+        coroutine = StartCoroutine(RunPanic(duration, rate));
     }
 
     private IEnumerator RunPanic(float duration, float rate)
@@ -45,6 +47,16 @@ public class Panic : MonoBehaviour
             timer -= rate;
             yield return new WaitForSeconds(rate);
         }
+        isActive = false;
+        transform.position = startPos;
+    }
+
+    private void StopPanic()
+    {
+        if (coroutine != null) {
+            StopCoroutine(coroutine);
+        }
+        
         isActive = false;
         transform.position = startPos;
     }

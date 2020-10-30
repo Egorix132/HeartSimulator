@@ -31,6 +31,8 @@ public class UpgradeBase : MonoBehaviour
             PlayerPrefs.SetInt(upgradeTitle, level);
 
             Image.color = Color.white;
+
+            AchievmentsManager.Instance.CountUpgrade();
         }
     }
 

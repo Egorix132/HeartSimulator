@@ -9,6 +9,9 @@ public class Heartbeat : MonoBehaviour
 
     public static Heartbeat Instance { get; private set; }
 
+    [SerializeField] private Sprite commonSprite;
+    [SerializeField] private Sprite transparentSprite;
+
     [SerializeField] private float scalePower;
     [SerializeField] private float standartNecessaryTouchTime;
     [SerializeField] private float force = 10f;
@@ -18,6 +21,13 @@ public class Heartbeat : MonoBehaviour
 
     private float lastTouchTime;
     private bool counted;
+
+    private new SpriteRenderer renderer;
+    private HeartBlood blood;
+
+    public event Action OnDown;
+    public event Action OnDrag;
+    public event Action OnUp;
 
     private void Awake()
     {
@@ -30,6 +40,16 @@ public class Heartbeat : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        renderer = GetComponent<SpriteRenderer>();
+
+        GameManager.OnStartGame += () => renderer.sprite = transparentSprite;
+        GameManager.OnEndGame += () => renderer.sprite = commonSprite;
+    }
+
+    private void Start()
+    {
+        blood = HeartBlood.Instance;
     }
 
     private void OnEnable()
@@ -56,11 +76,15 @@ public class Heartbeat : MonoBehaviour
 
         lastTouchTime = 0;
         counted = false;
+        OnDown?.Invoke();
+
         if (necessaryTouchTime < 0.07)
         {
             Beat();
             HandleBeat();
         }
+
+        blood.Fill(true, 0.0002f / necessaryTouchTime * BPM.Instance?.Bpm ?? 60);
     }
 
     private void OnMouseDrag()
@@ -77,13 +101,24 @@ public class Heartbeat : MonoBehaviour
 
         HandleBeat();
         lastTouchTime += Time.deltaTime;
+        OnDrag?.Invoke();
+
         if (!counted)
         {
             float scale = (scalePower / necessaryTouchTime + 1) * Time.deltaTime;
             transform.localScale -= new Vector3(scale, scale, scale);
+
             if (lastTouchTime > necessaryTouchTime)
                 Beat();
         }
+
+        blood.Fill(true, 0.0002f / necessaryTouchTime * BPM.Instance?.Bpm ?? 60);
+    }
+
+    private void OnMouseUp()
+    {
+        OnUp?.Invoke();
+        blood.Fill(false, 0.0006f * BPM.Instance?.Bpm ?? 60);
     }
 
     private void Beat()
