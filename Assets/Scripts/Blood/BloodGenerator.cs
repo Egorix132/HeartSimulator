@@ -16,7 +16,7 @@ public class BloodGenerator : BloodGeneratorBase
 
             if (minTime < 0.5f)
             {
-                SpawnBlood();
+                SpawnBlood(0.5f);
             }
 
             yield return new WaitForSeconds(1 / bloodDropsSpawnRate);

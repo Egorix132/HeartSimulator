@@ -1,39 +1,45 @@
-﻿using System;
+﻿using SplineMesh;
+using System;
 using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(ParticleSystem))]
+[RequireComponent(typeof(Spline))]
 class Hormone : MonoBehaviour
 {
     public HormoneData data;
 
     private SpriteRenderer spriteRenderer;
     private ParticleSystem particleSystem;
-    private Vector3 heart;
-    private Vector3 startPoint;
+    private SplineFollower splineFollower;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        particleSystem = GetComponent<ParticleSystem>();
+        splineFollower = GetComponent<SplineFollower>();
+    }
 
     private void Start()
     {
-        startPoint = transform.position;
-        heart = Heartbeat.Instance.transform.position - new Vector3(0, 0, 1);
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        particleSystem = GetComponent<ParticleSystem>();
         spriteRenderer.color = data.color;
         particleSystem.startColor = data.color;
     }
 
-    public IEnumerator Run(Action<Hormone, float> onAppear, Action<Hormone> onSet, Action<float> onDisappear, Action onRelease)
+    public IEnumerator Run(
+        Spline spline,
+        Action<Hormone, float> onAppear,
+        Action<Hormone> onSet,
+        Action<float> onDisappear,
+        Action onRelease)
     {
         onAppear?.Invoke(this, data.moveTime);
 
-        while (transform.position != heart)
-        {
-            transform.position = Vector3.MoveTowards(transform.position,
-                heart,
-                Vector3.Distance(heart, startPoint) / data.moveTime * Time.fixedDeltaTime);
-            yield return new WaitForFixedUpdate();
-        }
+        bool isReached = false;
+        splineFollower.Init(spline, data.moveTime, () => isReached = true);
+
+        yield return new WaitUntil(() => isReached);
 
         onSet?.Invoke(this);
 

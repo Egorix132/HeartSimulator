@@ -5,10 +5,10 @@ public class AchievmentsManager : MonoBehaviour
 {
     public static AchievmentsManager Instance { get; private set; }
 
-    public int beatCount;
-    public int upgradesCount;
+    private int beatCount;
+    private int upgradesCount;
 
-    public bool pubertyAchieved;
+    private bool pubertyAchieved;
 
 
     private void Awake()
@@ -22,13 +22,14 @@ public class AchievmentsManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Social.LoadAchievements((achievments) =>
-            {
-                pubertyAchieved 
-                    = achievments.ToList()
-                                 .Find((a) => a.id == GPGSIds.achievement_may_be_enougth)
-                                 .completed;
-            });
+        Authentification.AfterAuth += () => Social.LoadAchievements((achievments) =>
+        {
+            pubertyAchieved
+                = achievments?.ToList()
+                             .Find((a) => a.id == GPGSIds.achievement_may_be_enougth)
+                             ?.completed ?? false;
+        });
+        
         beatCount = PlayerPrefs.GetInt("Achievments.BeatCount", 0);
         upgradesCount = PlayerPrefs.GetInt("Achievments.UpgradesCount", 0);
 
@@ -43,7 +44,7 @@ public class AchievmentsManager : MonoBehaviour
         Social.ReportScore(value, leaderboard, null);
     }
 
-    public void OpenAchivments()
+    public void OpenAchievments()
     {
         Social.ShowAchievementsUI();
     }

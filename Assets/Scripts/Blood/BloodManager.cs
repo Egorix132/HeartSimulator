@@ -3,12 +3,22 @@
 class BloodManager : MonoBehaviour
 {
     [SerializeField] private Material bloodMaterial;
+    [SerializeField] private Color defaultColor;
 
-    private void Update()
+    private SpriteRenderer heartBlood;
+
+    private void Start()
     {
-        float minTime = BPM.Instance.CalcIdealTime(BPMBorders.Instance.MinBorder);
-        minTime = minTime < 0 ? -minTime : 0;
-        minTime = minTime < 4 ? minTime : 4;
-        bloodMaterial.SetFloat("_DangerLevel", minTime / 4);
+        heartBlood = HeartBlood.Instance.transform.GetChild(0).GetComponent<SpriteRenderer>();      
+        HormoneSpawner.OnAppear += (h, _) => ChangeBloodColor(h.data.color);
+        HormoneSpawner.OnRelease += () => ChangeBloodColor(defaultColor);
+
+        ChangeBloodColor(defaultColor);
+    }
+
+    private void ChangeBloodColor(Color color)
+    {
+        heartBlood.color = color;
+        bloodMaterial.SetColor("_Color", color);
     }
 }

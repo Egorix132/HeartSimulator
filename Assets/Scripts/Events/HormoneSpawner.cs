@@ -1,13 +1,12 @@
-﻿using System;
+﻿using SplineMesh;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 class HormoneSpawner : MonoBehaviour
 {
-
     public static HormoneSpawner Instance { get; private set; }
 
-    [SerializeField] private List<Vector3> spawnPoints = new List<Vector3>();
     [SerializeField] private GameObject hormonePrefab;
 
     public static event Action<Hormone, float> OnAppear;
@@ -15,7 +14,7 @@ class HormoneSpawner : MonoBehaviour
     public static event Action<float> OnDisappear;
     public static event Action OnRelease;
 
-    System.Random random;
+    private Spline spline;
 
     private void Awake()
     {
@@ -28,15 +27,16 @@ class HormoneSpawner : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        random = new System.Random();
+        spline = GetComponent<Spline>();
     }
 
-    public void SpawnHormone(HormoneData hormone)
+    public void SpawnHormone(HormoneData hormoneData)
     {
-        Vector3 spawnPoint = spawnPoints[random.Next(0, spawnPoints.Count - 1)];
-        Hormone newHormone = Instantiate(hormonePrefab, spawnPoint, new Quaternion(), null).GetComponent<Hormone>();
-        newHormone.data = hormone;
-        StartCoroutine(newHormone.Run(OnAppear, OnSet, OnDisappear, OnRelease));
+        Hormone newHormone
+            = Instantiate(hormonePrefab, transform)
+                .GetComponent<Hormone>();
+        newHormone.data = hormoneData;
+        StartCoroutine(newHormone.Run(spline, OnAppear, OnSet, OnDisappear, OnRelease));
     }
 }
 

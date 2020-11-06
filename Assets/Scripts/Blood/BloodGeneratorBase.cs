@@ -1,22 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using SplineMesh;
 using UnityEngine;
 
+[RequireComponent(typeof(Spline))]
 public class BloodGeneratorBase : MonoBehaviour
 {
-    public List<Transform> keyPositions = new List<Transform>();
-
     [SerializeField] protected int bloodDropsCount;
     [SerializeField] protected float bloodDropsSpawnRate;
     [SerializeField] protected GameObject bloodPrefab;
 
-    protected System.Random r = new System.Random();
+    private System.Random r = new System.Random();
 
-    protected void SpawnBlood()
+    protected void SpawnBlood(float remainTime)
     {
         for (int i = 0; i < bloodDropsCount; i++)
         {
             var o = Instantiate(bloodPrefab, transform, false);
-            o.transform.position += new Vector3(r.Next(-100, 100) * 0.002f, r.Next(-100, 100) * 0.002f, 0);
+            o.GetComponent<SplineFollower>()
+             .Init(
+                GetComponent<Spline>(),
+                remainTime,
+                () => Destroy(o),
+                r.Next(0, 30) / 30f,
+                new Vector3(
+                    r.Next(-50, 50) / 3000f,
+                    r.Next(-50, 50) / 3000f,
+                    0));
         }
     }
 }

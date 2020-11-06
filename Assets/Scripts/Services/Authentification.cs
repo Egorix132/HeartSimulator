@@ -1,5 +1,6 @@
 ﻿using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using System;
 using UnityEngine;
 
 public class Authentification : MonoBehaviour
@@ -7,6 +8,7 @@ public class Authentification : MonoBehaviour
     public static Authentification Instance { get; private set; }
 
     public static PlayGamesPlatform platform;
+    public static Action AfterAuth;
 
     private void Awake()
     {
@@ -32,7 +34,10 @@ public class Authentification : MonoBehaviour
 
         Social.Active.localUser.Authenticate(success =>
         {
-            
+            if (success)
+            {
+                AfterAuth?.Invoke();
+            }
         });
     }
 }

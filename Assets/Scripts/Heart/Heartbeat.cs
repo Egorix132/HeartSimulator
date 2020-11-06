@@ -118,7 +118,7 @@ public class Heartbeat : MonoBehaviour
     private void OnMouseUp()
     {
         OnUp?.Invoke();
-        blood.Fill(false, 0.0006f * BPM.Instance?.Bpm ?? 60);
+        blood.Fill(false, 0.002f * BPM.Instance?.Bpm ?? 60);
     }
 
     private void Beat()
